@@ -25,7 +25,7 @@ class Profile(models.Model):
 
 class Lesson(models.Model):
     title = models.CharField(max_length=60)
-    theme = models.CharField(max_length=30, default= "ot")
+    theme = models.IntegerField()
     text = models.TextField()
     tasks = models.ManyToManyField(Task)
 
