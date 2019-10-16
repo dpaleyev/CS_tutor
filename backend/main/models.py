@@ -17,7 +17,7 @@ class Note(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    judge_id = models.CharField(max_length=30, blank=True)
+    judge_id = models.CharField(max_length=30)
     completed_tasks = models.ManyToManyField(Task, related_name="compl+")
     wa_tasks = models.ManyToManyField(Task, related_name="wa+")
     todo_tasks = models.ManyToManyField(Task, related_name="todo+")
@@ -27,5 +27,5 @@ class Lesson(models.Model):
     title = models.CharField(max_length=60)
     theme = models.IntegerField()
     text = models.TextField()
-    tasks = models.ManyToManyField(Task)
+    tasks = models.ManyToManyField(Task, blank=True)
 
