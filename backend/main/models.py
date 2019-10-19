@@ -8,7 +8,7 @@ class Theme(models.Model):
 class Task(models.Model):
     num = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=60)
-    theme = models.ManyToManyField(Theme)
+    theme = models.ManyToManyField(Theme, blank=True)
 
 class Note(models.Model):
     task = models.ForeignKey('Task', on_delete=models.CASCADE)
