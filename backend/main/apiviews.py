@@ -3,10 +3,36 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from rest_framework import status
 import json
+from django.http import JsonResponse
+
 
 
 from .models import Lesson, Profile
 from .serializers import LessonSerializer, UserSerializer, ProfileSerializer
+from .day_check import date_res
+from .theme_check import theme_res
+from .task_update import update
+
+
+class Statistic(APIView):
+    def get(self, request):
+        user = request.user
+        p = Profile.objects.get(user=user)
+        update(p)
+        days = date_res(p)
+        compl = p.completed_tasks.count()
+        tried = p.wa_tasks.count()
+        theme_prog = theme_res(p)
+        data = {
+            "completed": compl,
+            "tried": tried,
+            "day_statistic": days,
+            "theme_statistic": theme_prog,
+        }
+        return JsonResponse(data)
+
+
+
 
 class LessonList(APIView):
     def get(self, request, theme):
