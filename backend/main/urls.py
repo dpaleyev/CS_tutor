@@ -5,7 +5,6 @@ from rest_framework.authtoken import views
 from .models import Profile
 from .task_update import update
 
-#add("https://timus.online/problemset.aspx?space=1&tag=geometry", "Геометрия")
 
 urlpatterns = [
     path("login/", views.obtain_auth_token, name="login"),
