@@ -12,8 +12,8 @@ class Task(models.Model):
 
 class Note(models.Model):
     task = models.ForeignKey('Task', on_delete=models.CASCADE)
-    idea = models.TextField()
-    modified = models.DateField(auto_now=True)
+    idea = models.TextField(max_length=1000)
+    modified = models.DateField(auto_now=True, blank=True)
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

@@ -1,9 +1,10 @@
-from rest_framework import serializers
-from .models import Lesson, Task, Theme, Profile
-from .models import Profile
 from django.contrib.auth.models import User
+from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 from rest_framework.validators import UniqueValidator
+
+from .models import Lesson, Task, Theme, Profile, Note
+
 
 
 class LessonSerializer(serializers.ModelSerializer):
@@ -18,10 +19,17 @@ class TaskSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class NoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Note
+        fields = '__all__'
+
+
 class ThemeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Theme
         fields = '__all__'
+
 
 class UserSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(
@@ -46,6 +54,8 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = '__all__'
+
+
 
 
 
