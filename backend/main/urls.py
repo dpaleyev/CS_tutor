@@ -2,6 +2,8 @@ from django.urls import path
 from .addTheme import add
 from .apiviews import LessonList, LessonDetail, UserCreate
 from rest_framework.authtoken import views
+from .models import Profile
+from .task_update import update
 
 #add("https://timus.online/problemset.aspx?space=1&tag=geometry", "Геометрия")
 
