@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  StarterView.swift
 //  CSTutor
 //
 //  Created by Даниил Палеев on 30.10.2019.
@@ -8,14 +8,15 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct StarterView: View {
+    @EnvironmentObject var userViewModel: UserManager
     var body: some View {
-        Text("Hello World")
+        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct StarterView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        StarterView()
     }
 }
