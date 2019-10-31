@@ -15,7 +15,6 @@ struct RegisterView: View {
     @State var password2: String = ""
     @State var lenAlert: Bool = false
     @State var passAlert: Bool = false
-    @State var wrongAlert: Bool = false
     var body: some View {
         VStack{
             VStack{
@@ -46,6 +45,7 @@ struct RegisterView: View {
                   .bold()
               }
             }.bordered()
+            Text("\(userManager.settings.token)")
             
         }
         .padding(.trailing)
@@ -55,7 +55,7 @@ struct RegisterView: View {
         .alert(isPresented: $passAlert) {
             Alert(title: Text("Пароли не совпадают"))
         }
-        .alert(isPresented: $wrongAlert) {
+        .alert(isPresented: $userManager.settings.regprobl) {
             Alert(title: Text("Уже есть пользователь с таким логином или e-mail"))
         }
     }
@@ -72,15 +72,7 @@ extension RegisterView {
         }
         else{
             userManager.profile.password = password1
-            RegistrationAPI(profile: userManager.profile) { (token) in
-                if let token = token{
-                    print(token)
-                    self.userManager.settings.token = token
-                }
-                else{
-                    self.wrongAlert = true
-                }
-            }
+            userManager.registrate()
         }
     }
 }

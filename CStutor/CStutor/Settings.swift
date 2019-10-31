@@ -8,6 +8,7 @@
 
 struct Settings : Codable {
     var rememberUser: Bool = false
-    var registrated = false
+    var regprobl = false
+    var authprobl = false
     var token: String = ""
 }
