@@ -25,6 +25,7 @@ struct RegisterView: View {
                 TextField("Password (again)", text: $password2)
             }
             .padding(.leading)
+                .padding(.trailing)
                 .font(Font.system(size: 20, design: .default))
             
             HStack {
@@ -36,11 +37,11 @@ struct RegisterView: View {
                   .multilineTextAlignment(.trailing)
                   .foregroundColor(.gray)
               }
-            }
+            }.padding(.trailing)
             
             Button(action: self.registerUser) {
               HStack {
-                Text("Sign in")
+                Text("Sign up")
                   .font(Font.system(size: 22, design: .default))
                   .bold()
               }
@@ -48,7 +49,7 @@ struct RegisterView: View {
             Text("\(userManager.settings.token)")
             
         }
-        .padding(.trailing)
+        
         .alert(isPresented: $lenAlert) {
             Alert(title: Text("Короткий пароль"), message: Text("Пароль должен состоять минимум из 8 символов"))
         }
@@ -73,6 +74,10 @@ extension RegisterView {
         else{
             userManager.profile.password = password1
             userManager.registrate()
+            if userManager.settings.rememberUser{
+                userManager.persistProfile()
+                userManager.persistSettings()
+            }
         }
     }
 }

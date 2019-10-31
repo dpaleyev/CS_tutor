@@ -23,7 +23,7 @@ final class UserManager: ObservableObject {
     }
   
     var isRegistered: Bool {
-        return settings.token != " "
+        return settings.token != ""
     }
   
     init() {
@@ -76,7 +76,7 @@ final class UserManager: ObservableObject {
                     self.settings.regprobl = true
                 return
             }
-            self.login() 
+            self.login()
         }
         task.resume()
     }

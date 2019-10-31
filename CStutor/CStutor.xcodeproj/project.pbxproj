@@ -19,7 +19,8 @@
 		1E117479236A09B300417417 /* KeyboardFollower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E117478236A09B300417417 /* KeyboardFollower.swift */; };
 		1E11747C236A09F400417417 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E11747B236A09F400417417 /* RegisterView.swift */; };
 		1E11747E236A1FC000417417 /* BorderedViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E11747D236A1FC000417417 /* BorderedViewModifier.swift */; };
-		1E85E1E7236A2C4A003504E1 /* MyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E85E1E6236A2C4A003504E1 /* MyAPI.swift */; };
+		1E85E1EB236B44FD003504E1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E85E1EA236B44FD003504E1 /* LoginView.swift */; };
+		1E85E1ED236B4FE6003504E1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E85E1EC236B4FE6003504E1 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +38,8 @@
 		1E117478236A09B300417417 /* KeyboardFollower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFollower.swift; sourceTree = "<group>"; };
 		1E11747B236A09F400417417 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		1E11747D236A1FC000417417 /* BorderedViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedViewModifier.swift; sourceTree = "<group>"; };
-		1E85E1E6236A2C4A003504E1 /* MyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAPI.swift; sourceTree = "<group>"; };
+		1E85E1EA236B44FD003504E1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1E85E1EC236B4FE6003504E1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		1E1174562369FDC300417417 /* CSTutor */ = {
 			isa = PBXGroup;
 			children = (
+				1E85E1E9236B44AC003504E1 /* Utilitls */,
 				1E11747A236A09D600417417 /* Welcome */,
 				1E1174572369FDC300417417 /* AppDelegate.swift */,
 				1E1174592369FDC300417417 /* SceneDelegate.swift */,
@@ -81,9 +84,7 @@
 				1E117470236A02AF00417417 /* Settings.swift */,
 				1E117472236A031900417417 /* UserManager.swift */,
 				1E117474236A087D00417417 /* StarterView.swift */,
-				1E117478236A09B300417417 /* KeyboardFollower.swift */,
-				1E11747D236A1FC000417417 /* BorderedViewModifier.swift */,
-				1E85E1E6236A2C4A003504E1 /* MyAPI.swift */,
+				1E85E1EC236B4FE6003504E1 /* HomeView.swift */,
 			);
 			path = CSTutor;
 			sourceTree = "<group>";
@@ -100,8 +101,18 @@
 			isa = PBXGroup;
 			children = (
 				1E11747B236A09F400417417 /* RegisterView.swift */,
+				1E85E1EA236B44FD003504E1 /* LoginView.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		1E85E1E9236B44AC003504E1 /* Utilitls */ = {
+			isa = PBXGroup;
+			children = (
+				1E117478236A09B300417417 /* KeyboardFollower.swift */,
+				1E11747D236A1FC000417417 /* BorderedViewModifier.swift */,
+			);
+			path = Utilitls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,15 +186,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E85E1E7236A2C4A003504E1 /* MyAPI.swift in Sources */,
 				1E117473236A031900417417 /* UserManager.swift in Sources */,
 				1E1174582369FDC300417417 /* AppDelegate.swift in Sources */,
 				1E117475236A087D00417417 /* StarterView.swift in Sources */,
 				1E11746F236A00DB00417417 /* Profile.swift in Sources */,
 				1E117479236A09B300417417 /* KeyboardFollower.swift in Sources */,
+				1E85E1ED236B4FE6003504E1 /* HomeView.swift in Sources */,
 				1E11747E236A1FC000417417 /* BorderedViewModifier.swift in Sources */,
 				1E11747C236A09F400417417 /* RegisterView.swift in Sources */,
 				1E11745A2369FDC300417417 /* SceneDelegate.swift in Sources */,
+				1E85E1EB236B44FD003504E1 /* LoginView.swift in Sources */,
 				1E117471236A02AF00417417 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
