@@ -47,8 +47,8 @@ struct RegisterView: View {
               }
             }.bordered()
             Text("\(userManager.settings.token)")
-            
-        }
+        }.onAppear { self.keyboardHandler.subscribe() }
+        .onDisappear { self.keyboardHandler.unsubscribe() }
         
         .alert(isPresented: $lenAlert) {
             Alert(title: Text("Короткий пароль"), message: Text("Пароль должен состоять минимум из 8 символов"))

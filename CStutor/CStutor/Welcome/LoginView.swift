@@ -48,6 +48,8 @@ struct LoginView: View {
                 Text("\(userManager.settings.token)")
                 
             }
+                .onAppear { self.keyboardHandler.subscribe() }
+                .onDisappear { self.keyboardHandler.unsubscribe() }
             .alert(isPresented: $userManager.settings.authprobl) {
                 Alert(title: Text("Неправильный логин или пароль"))
             }

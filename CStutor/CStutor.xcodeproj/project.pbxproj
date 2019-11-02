@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E075504236DDEA50057F001 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E075503236DDEA50057F001 /* ThemeView.swift */; };
+		1E075506236DE0C00057F001 /* LessonsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E075505236DE0C00057F001 /* LessonsManager.swift */; };
+		1E075508236DE0E30057F001 /* LessonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E075507236DE0E30057F001 /* LessonModel.swift */; };
+		1E07550A236DE7810057F001 /* LessonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E075509236DE7810057F001 /* LessonDetails.swift */; };
 		1E1174582369FDC300417417 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1174572369FDC300417417 /* AppDelegate.swift */; };
 		1E11745A2369FDC300417417 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1174592369FDC300417417 /* SceneDelegate.swift */; };
 		1E11745E2369FDCA00417417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E11745D2369FDCA00417417 /* Assets.xcassets */; };
@@ -21,9 +25,16 @@
 		1E11747E236A1FC000417417 /* BorderedViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E11747D236A1FC000417417 /* BorderedViewModifier.swift */; };
 		1E85E1EB236B44FD003504E1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E85E1EA236B44FD003504E1 /* LoginView.swift */; };
 		1E85E1ED236B4FE6003504E1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E85E1EC236B4FE6003504E1 /* HomeView.swift */; };
+		1EE35AE4236D9E5900BAA42E /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE35AE3236D9E5800BAA42E /* BookView.swift */; };
+		1EE35AE6236D9EC500BAA42E /* ThemeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE35AE5236D9EC400BAA42E /* ThemeButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E075503236DDEA50057F001 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		1E075505236DE0C00057F001 /* LessonsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsManager.swift; sourceTree = "<group>"; };
+		1E075507236DE0E30057F001 /* LessonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModel.swift; sourceTree = "<group>"; };
+		1E075509236DE7810057F001 /* LessonDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonDetails.swift; sourceTree = "<group>"; };
+		1E07550B236E0A7C0057F001 /* CSTutor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CSTutor.entitlements; sourceTree = "<group>"; };
 		1E1174542369FDC300417417 /* CSTutor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSTutor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E1174572369FDC300417417 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E1174592369FDC300417417 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +51,8 @@
 		1E11747D236A1FC000417417 /* BorderedViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedViewModifier.swift; sourceTree = "<group>"; };
 		1E85E1EA236B44FD003504E1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1E85E1EC236B4FE6003504E1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1EE35AE3236D9E5800BAA42E /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
+		1EE35AE5236D9EC400BAA42E /* ThemeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +85,12 @@
 		1E1174562369FDC300417417 /* CSTutor */ = {
 			isa = PBXGroup;
 			children = (
+				1E07550B236E0A7C0057F001 /* CSTutor.entitlements */,
+				1EE35AE5236D9EC400BAA42E /* ThemeButtonView.swift */,
+				1EE35AE3236D9E5800BAA42E /* BookView.swift */,
+				1E11746E236A00DB00417417 /* Profile.swift */,
+				1E117470236A02AF00417417 /* Settings.swift */,
+				1E117472236A031900417417 /* UserManager.swift */,
 				1E85E1E9236B44AC003504E1 /* Utilitls */,
 				1E11747A236A09D600417417 /* Welcome */,
 				1E1174572369FDC300417417 /* AppDelegate.swift */,
@@ -80,11 +99,12 @@
 				1E1174622369FDCA00417417 /* LaunchScreen.storyboard */,
 				1E1174652369FDCA00417417 /* Info.plist */,
 				1E11745F2369FDCA00417417 /* Preview Content */,
-				1E11746E236A00DB00417417 /* Profile.swift */,
-				1E117470236A02AF00417417 /* Settings.swift */,
-				1E117472236A031900417417 /* UserManager.swift */,
 				1E117474236A087D00417417 /* StarterView.swift */,
 				1E85E1EC236B4FE6003504E1 /* HomeView.swift */,
+				1E075503236DDEA50057F001 /* ThemeView.swift */,
+				1E075505236DE0C00057F001 /* LessonsManager.swift */,
+				1E075507236DE0E30057F001 /* LessonModel.swift */,
+				1E075509236DE7810057F001 /* LessonDetails.swift */,
 			);
 			path = CSTutor;
 			sourceTree = "<group>";
@@ -187,11 +207,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E117473236A031900417417 /* UserManager.swift in Sources */,
+				1E075508236DE0E30057F001 /* LessonModel.swift in Sources */,
 				1E1174582369FDC300417417 /* AppDelegate.swift in Sources */,
 				1E117475236A087D00417417 /* StarterView.swift in Sources */,
+				1E07550A236DE7810057F001 /* LessonDetails.swift in Sources */,
+				1EE35AE4236D9E5900BAA42E /* BookView.swift in Sources */,
 				1E11746F236A00DB00417417 /* Profile.swift in Sources */,
 				1E117479236A09B300417417 /* KeyboardFollower.swift in Sources */,
+				1EE35AE6236D9EC500BAA42E /* ThemeButtonView.swift in Sources */,
 				1E85E1ED236B4FE6003504E1 /* HomeView.swift in Sources */,
+				1E075504236DDEA50057F001 /* ThemeView.swift in Sources */,
+				1E075506236DE0C00057F001 /* LessonsManager.swift in Sources */,
 				1E11747E236A1FC000417417 /* BorderedViewModifier.swift in Sources */,
 				1E11747C236A09F400417417 /* RegisterView.swift in Sources */,
 				1E11745A2369FDC300417417 /* SceneDelegate.swift in Sources */,
@@ -332,7 +358,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CSTutor/CSTutor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CSTutor/Preview Content\"";
 				DEVELOPMENT_TEAM = 29QYQ2ZZ4L;
 				ENABLE_PREVIEWS = YES;
@@ -343,6 +371,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dannyap74.CSTutor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -352,7 +381,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CSTutor/CSTutor.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"CSTutor/Preview Content\"";
 				DEVELOPMENT_TEAM = 29QYQ2ZZ4L;
 				ENABLE_PREVIEWS = YES;
@@ -363,6 +394,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dannyap74.CSTutor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

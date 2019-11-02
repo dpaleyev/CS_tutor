@@ -9,8 +9,26 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var selectedView = 2
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        TabView(selection: $selectedView) {
+            BookView()
+                .tabItem {
+                Image(systemName: "book").resizable()
+                Text("Учебник")
+            }.tag(1)
+            Text("Tab Content 2")
+                .tabItem {
+                Image(systemName: "star").resizable()
+                Text("Статистика")
+                    
+            }.tag(2)
+            Text("Tab Content 3")
+                .tabItem {
+                Image(systemName: "list.bullet").resizable()
+                Text("Идеи")
+            }.tag(3)
+        }
     }
 }
 
