@@ -116,13 +116,16 @@ final class UserManager: ObservableObject {
                     if let token = jsonDict["token"] {
                         DispatchQueue.main.async {
                             self.settings.token = token
-                            self.persistSettings()
+                            if self.settings.rememberUser{
+                                self.persistProfile()
+                                self.persistSettings()
+                            }
                         }
                     }
-                }  catch let error as NSError {
+                }  catch _ as NSError {
                     self.settings.authprobl = true
                 }
-            } else if let error = error {
+            } else if error != nil {
                 self.settings.authprobl = true
             }
         }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Statistics: Codable{
+struct Statistics: Codable, Hashable{
     var completed: Int
     var tried: Int
     var day_statistic: [Int]
@@ -16,12 +16,12 @@ struct Statistics: Codable{
     init(){
         self.completed = 0
         self.tried = 0
-        self.day_statistic = [0, 0, 3, 0, 0, 0, 0]
+        self.day_statistic = [0, 0, 0, 0, 0, 0, 0]
         self.theme_statistic = []
     }
 }
 
-struct Theme: Codable {
+struct Theme: Codable, Hashable {
     var name: String
     var url: String
     var compl: Int
