@@ -21,6 +21,13 @@ final class UserManager: ObservableObject {
           didChange.send(self)
         }
     }
+    
+    @Published
+    var statistics: Statistics = Statistics(){
+        didSet {
+          didChange.send(self)
+        }
+    }
   
     var isRegistered: Bool {
         return settings.token != ""
@@ -73,7 +80,9 @@ final class UserManager: ObservableObject {
         let task = URLSession.shared.uploadTask(with: request, from: jsonData) { data, response, error in
             guard let response = response as? HTTPURLResponse,
                 (200...299).contains(response.statusCode) else {
-                    self.settings.regprobl = true
+                    DispatchQueue.main.async {
+                        self.settings.regprobl = true
+                    }
                 return
             }
             self.login()
@@ -105,7 +114,10 @@ final class UserManager: ObservableObject {
                     let decoder = JSONDecoder()
                     let jsonDict = try decoder.decode([String:String].self, from: data)
                     if let token = jsonDict["token"] {
-                        self.settings.token = token
+                        DispatchQueue.main.async {
+                            self.settings.token = token
+                            self.persistSettings()
+                        }
                     }
                 }  catch let error as NSError {
                     self.settings.authprobl = true
@@ -115,5 +127,18 @@ final class UserManager: ObservableObject {
             }
         }
         task.resume()
+    }
+    
+    func getResults() {
+        let url = URL(string: "http://localhost:8000/statistics/")!
+        var request = URLRequest(url: url)
+        request.setValue("Token \(self.settings.token)", forHTTPHeaderField: "Authorization")
+        URLSession.shared.dataTask(with: request){ (data, _, _) in
+            guard let data = data else { return }
+            let statistics = try! JSONDecoder().decode(Statistics.self, from: data)
+            DispatchQueue.main.async {
+                self.statistics = statistics
+            }
+        }.resume()
     }
 }

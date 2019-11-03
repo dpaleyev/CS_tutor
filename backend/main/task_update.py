@@ -16,7 +16,6 @@ def update(prof):
         num = int(name.get_text()[:4])
         t = Task.objects.get(num=num)
         prof.completed_tasks.add(t)
-        print(num)
 
     nameList = bsObj.findAll("td", {"class":"tried"})
 

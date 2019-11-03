@@ -17,13 +17,13 @@ struct HomeView: View {
                 Image(systemName: "book").resizable()
                 Text("Учебник")
             }.tag(1)
-            Text("Tab Content 2")
+            StatisticView()
                 .tabItem {
                 Image(systemName: "star").resizable()
                 Text("Статистика")
                     
             }.tag(2)
-            Text("Tab Content 3")
+            ChartView(res: [3, 4, 0, 0, 4, 5, 1])
                 .tabItem {
                 Image(systemName: "list.bullet").resizable()
                 Text("Идеи")

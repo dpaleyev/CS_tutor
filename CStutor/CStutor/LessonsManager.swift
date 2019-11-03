@@ -11,7 +11,6 @@ import Combine
 import SwiftUI
 
 class LessonsManager: ObservableObject {
-    @EnvironmentObject var userManager: UserManager
     var didChange = PassthroughSubject<LessonsManager, Never>()
     var lessons: [Lesson] = []{
       didSet {

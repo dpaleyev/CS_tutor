@@ -9,13 +9,33 @@
 import SwiftUI
 
 struct LessonDetails: View {
+    @State var lesson: Lesson
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        ScrollView{
+            Text(lesson.title)
+                .font(.largeTitle)
+        
+            Text(lesson.text)
+                .font(.body)
+                .fixedSize(horizontal: false, vertical: true)
+                .padding()
+                
+            ForEach(lesson.tasks, id: \.self) { task in
+                Button(action: {
+                    guard let url = URL(string: "https://timus.online/problem.aspx?space=1&num=\(String(task))") else { return }
+                    UIApplication.shared.open(url)
+                }) {
+                    Text("Timis: \(String(task))").padding(5)
+                        
+                }
+            }
+                
+        }
     }
 }
 
 struct LessonDetails_Previews: PreviewProvider {
     static var previews: some View {
-        LessonDetails()
+        LessonDetails(lesson: Lesson(id: 1, title: "Алгоритм Дейкстры", theme: 3, text: "smoibvyftcdrct fvybhnijmbgvcftdtfvygbuhnijbgvy cftfvygbuhinvy", tasks: [1005, 1006] ))
     }
 }

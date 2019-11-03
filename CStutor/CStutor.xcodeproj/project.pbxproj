@@ -23,6 +23,9 @@
 		1E117479236A09B300417417 /* KeyboardFollower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E117478236A09B300417417 /* KeyboardFollower.swift */; };
 		1E11747C236A09F400417417 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E11747B236A09F400417417 /* RegisterView.swift */; };
 		1E11747E236A1FC000417417 /* BorderedViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E11747D236A1FC000417417 /* BorderedViewModifier.swift */; };
+		1E4BFF88236F004900293A2B /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BFF87236F004900293A2B /* StatisticView.swift */; };
+		1E4BFF8A236F051F00293A2B /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BFF89236F051E00293A2B /* Statistics.swift */; };
+		1E4BFF8C236F2ED700293A2B /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BFF8B236F2ED600293A2B /* ChartView.swift */; };
 		1E85E1EB236B44FD003504E1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E85E1EA236B44FD003504E1 /* LoginView.swift */; };
 		1E85E1ED236B4FE6003504E1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E85E1EC236B4FE6003504E1 /* HomeView.swift */; };
 		1EE35AE4236D9E5900BAA42E /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE35AE3236D9E5800BAA42E /* BookView.swift */; };
@@ -49,6 +52,9 @@
 		1E117478236A09B300417417 /* KeyboardFollower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFollower.swift; sourceTree = "<group>"; };
 		1E11747B236A09F400417417 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		1E11747D236A1FC000417417 /* BorderedViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedViewModifier.swift; sourceTree = "<group>"; };
+		1E4BFF87236F004900293A2B /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
+		1E4BFF89236F051E00293A2B /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		1E4BFF8B236F2ED600293A2B /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		1E85E1EA236B44FD003504E1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1E85E1EC236B4FE6003504E1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1EE35AE3236D9E5800BAA42E /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
@@ -90,6 +96,7 @@
 				1EE35AE3236D9E5800BAA42E /* BookView.swift */,
 				1E11746E236A00DB00417417 /* Profile.swift */,
 				1E117470236A02AF00417417 /* Settings.swift */,
+				1E4BFF89236F051E00293A2B /* Statistics.swift */,
 				1E117472236A031900417417 /* UserManager.swift */,
 				1E85E1E9236B44AC003504E1 /* Utilitls */,
 				1E11747A236A09D600417417 /* Welcome */,
@@ -105,6 +112,8 @@
 				1E075505236DE0C00057F001 /* LessonsManager.swift */,
 				1E075507236DE0E30057F001 /* LessonModel.swift */,
 				1E075509236DE7810057F001 /* LessonDetails.swift */,
+				1E4BFF87236F004900293A2B /* StatisticView.swift */,
+				1E4BFF8B236F2ED600293A2B /* ChartView.swift */,
 			);
 			path = CSTutor;
 			sourceTree = "<group>";
@@ -209,10 +218,13 @@
 				1E117473236A031900417417 /* UserManager.swift in Sources */,
 				1E075508236DE0E30057F001 /* LessonModel.swift in Sources */,
 				1E1174582369FDC300417417 /* AppDelegate.swift in Sources */,
+				1E4BFF8C236F2ED700293A2B /* ChartView.swift in Sources */,
 				1E117475236A087D00417417 /* StarterView.swift in Sources */,
 				1E07550A236DE7810057F001 /* LessonDetails.swift in Sources */,
 				1EE35AE4236D9E5900BAA42E /* BookView.swift in Sources */,
 				1E11746F236A00DB00417417 /* Profile.swift in Sources */,
+				1E4BFF8A236F051F00293A2B /* Statistics.swift in Sources */,
+				1E4BFF88236F004900293A2B /* StatisticView.swift in Sources */,
 				1E117479236A09B300417417 /* KeyboardFollower.swift in Sources */,
 				1EE35AE6236D9EC500BAA42E /* ThemeButtonView.swift in Sources */,
 				1E85E1ED236B4FE6003504E1 /* HomeView.swift in Sources */,

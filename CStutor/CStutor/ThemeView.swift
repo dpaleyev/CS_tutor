@@ -13,7 +13,7 @@ struct ThemeView: View {
     @State var lessonsManager: LessonsManager
     var body: some View {
         List(lessonsManager.lessons, id: \.id) { lesson in
-            NavigationLink(destination: LessonDetails()){
+            NavigationLink(destination: LessonDetails(lesson: lesson)){
                 Text("\(lesson.title)")
             }
         }.navigationBarTitle(Text("\(title)"))
