@@ -25,7 +25,7 @@ struct LessonDetails: View {
                     guard let url = URL(string: "https://timus.online/problem.aspx?space=1&num=\(String(task))") else { return }
                     UIApplication.shared.open(url)
                 }) {
-                    Text("Timis: \(String(task))").padding(5)
+                    Text("Timus: \(String(task))").padding(5)
                         
                 }
             }
