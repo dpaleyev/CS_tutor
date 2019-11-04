@@ -11,7 +11,7 @@ class Task(models.Model):
     theme = models.ManyToManyField(Theme, blank=True)
 
 class Note(models.Model):
-    task = models.ForeignKey('Task', on_delete=models.CASCADE)
+    task = models.CharField(max_length=60)
     idea = models.TextField(max_length=1000)
     modified = models.DateField(auto_now=True, blank=True)
 

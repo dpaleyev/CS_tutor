@@ -10,7 +10,6 @@ import SwiftUI
 
 struct BookView: View {
     var body: some View {
-        VStack{
             NavigationView{
                 ScrollView{
                     NavigationLink(destination: ThemeView(title: "Динамическое программирование", lessonsManager: LessonsManager(num: 1))){
@@ -33,7 +32,7 @@ struct BookView: View {
                     }
                 }.navigationBarTitle("Учебник")
             }
-        }
+        
     }
 }
 

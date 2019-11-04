@@ -21,6 +21,7 @@ struct StatisticView: View {
                         .padding()
                         Spacer()
                 }
+                
                 HStack{
                     VStack{
                         Text("  Решено:  ").font(.headline)
@@ -31,6 +32,7 @@ struct StatisticView: View {
                         Text("\(userManager.statistics.tried)").font(.largeTitle).bold()
                     }.padding()
                 }
+                
                 HStack(alignment: .center){
                     ForEach(0...6, id: \.self) {col in
                         ZStack{
@@ -43,21 +45,25 @@ struct StatisticView: View {
                         }
                     }
                 }
+                
                 if userManager.statistics.day_statistic[0] == 0 {
                     ZStack{
                         RoundedRectangle(cornerRadius: 25).fill(Color(hue: 55/360, saturation: 36/100, brightness: 98/100))
                         HStack{
                             Text("Сегодня ты не решил ни одной задачи! Попробуй ещё!")
                                 .font(.headline)
+                                .foregroundColor(Color.black)
                         }
                         }.frame(height: 100).padding()
                 }
+                
                 if userManager.statistics.day_statistic.reduce(0, +) >= 7 {
                     ZStack{
                         RoundedRectangle(cornerRadius: 25).fill(Color.green)
                         HStack{
                             Text("Ты хорошо постарался на этой неделе! Продолжай в том же духе!")
                                 .font(.headline)
+                                .foregroundColor(Color.black)
                         }
                     }.frame(height: 100).padding()
                 } else{
@@ -66,16 +72,18 @@ struct StatisticView: View {
                         HStack{
                             Text("Ты решил мало задач на этой неделе! Ты можешь лучше!")
                                 .font(.headline)
+                                .foregroundColor(Color.black)
                         }
                     }.frame(height: 100).padding()
                 }
+                
                 ForEach(userManager.statistics.theme_statistic, id: \.self){ theme in
                     HStack{
                         ZStack {
                             Circle()
                                 .trim(from: 0, to: CGFloat(self.getProg(t: theme)))
                                 .stroke(Color.green, lineWidth:5)
-                                .frame(width:100, height: 70)
+                                .frame(width:85, height: 70)
                                 .rotationEffect(Angle(degrees:-90))
                             Text(self.getPercentage(self.getProg(t: theme)))
                         }
@@ -92,10 +100,56 @@ struct StatisticView: View {
                     }
                 }
                 
+                HStack{
+                    Text("Ты можешь решить эти задачи:")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .lineLimit(2)
+                    Spacer()
+                }.padding()
+                
+                ForEach(userManager.tasks.todo, id: \.self) { task in
+                    Button(action: {
+                        guard let url = URL(string: "https://timus.online/problem.aspx?space=1&num=\(String(task))") else { return }
+                        UIApplication.shared.open(url)
+                    }) {
+                        Text("•Timis: \(String(task))").padding(5)
+                            
+                    }
+                }
+
+                
+                HStack{
+                    Text("Попробуй решить ещё раз:")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .lineLimit(2)
+                    Spacer()
+                }.padding()
+                
+                ForEach(userManager.tasks.wa, id: \.self) { task in
+                    Button(action: {
+                        guard let url = URL(string: "https://timus.online/problem.aspx?space=1&num=\(String(task))") else { return }
+                        UIApplication.shared.open(url)
+                    }) {
+                        Text("•Timis: \(String(task))").padding(5)
+                            
+                    }
+                }
+
+                
             }
             .navigationBarTitle("Статистика")
+            .navigationBarItems(trailing: Button(action: {
+                self.userManager.getResults()
+                self.userManager.getTasks()
+            }) {
+            Image(systemName: "arrow.clockwise")
+            })
         }
-        .onAppear { self.userManager.getResults() }
+        .onAppear { self.userManager.getResults()
+                    self.userManager.getTasks()
+        }
     }
     
     func getProg(t: Theme) -> Double{

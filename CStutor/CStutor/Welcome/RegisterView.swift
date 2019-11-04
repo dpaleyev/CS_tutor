@@ -25,8 +25,8 @@ struct RegisterView: View {
                 TextField("Password (again)", text: $password2)
             }
             .padding(.leading)
-                .padding(.trailing)
-                .font(Font.system(size: 20, design: .default))
+                .padding(.trailing).font(Font.system(size: 20, design: .default))
+                
             
             HStack {
               Spacer()

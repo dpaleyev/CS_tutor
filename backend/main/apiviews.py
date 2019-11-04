@@ -12,6 +12,7 @@ from .serializers import LessonSerializer, UserSerializer, ProfileSerializer, No
 from .day_check import date_res
 from .theme_check import theme_res
 from .task_update import update
+from .gtodo import get_to_do, get_tasks
 
 
 class NoteList(APIView):
@@ -27,12 +28,26 @@ class NoteList(APIView):
         data = json.loads(request.body)
         idea = data["idea"]
         task = data["task"]
-        print(idea)
-        t = Task.objects.get(num=task)
-        note = Note(idea=idea, task=t)
+        note = Note(idea=idea, task=task)
         note.save()
         p.notes.add(note)
         return Response(status=status.HTTP_201_CREATED)
+    def put(self, request):
+        data = json.loads(request.body)
+        id = data["id"]
+        idea = data["idea"]
+        task = data["task"]
+        n = Note.objects.get(pk=id)
+        n.idea = idea
+        n.task = task
+        n.save()
+        return Response(status=status.HTTP_201_CREATED)
+    def delete(self, request):
+        data = json.loads(request.body)
+        id = data["id"]
+        Note.objects.get(pk=id).delete()
+        return Response(status=status.HTTP_200_OK)
+
 
 class Statistic(APIView):
     def get(self, request):
@@ -48,6 +63,19 @@ class Statistic(APIView):
             "tried": tried,
             "day_statistic": days,
             "theme_statistic": theme_prog,
+        }
+        return JsonResponse(data)
+
+class ToDo(APIView):
+    def get(self, request):
+        user = request.user
+        p = Profile.objects.get(user=user)
+        update(p)
+        get_to_do(p)
+        a, b = get_tasks(p)
+        data = {
+            "todo": a,
+            "wa": b
         }
         return JsonResponse(data)
 

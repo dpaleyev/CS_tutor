@@ -2,24 +2,28 @@ import requests
 from bs4 import BeautifulSoup
 from .models import Profile, Task
 
-
-def update(prof):
+def get_to_do(prof):
     judge_id = int(prof.judge_id)
     url = 'https://timus.online/author.aspx?id=%d&sort=difficulty' % judge_id
     req = requests.get(url)
 
     bsObj = BeautifulSoup(req.text)
-    nameList = bsObj.findAll("td", {"class":"accepted"})
-
+    nameList = bsObj.findAll("td", {"class": "empty"})
+    i = 0
     for name in nameList:
+        if i >= 10:
+            break
         num = int(name.get_text()[:4])
         t = Task.objects.get(num=num)
-        prof.completed_tasks.add(t)
+        prof.todo_tasks.add(t)
+        i += 1
 
-    nameList = bsObj.findAll("td", {"class":"tried"})
+def get_tasks(prof):
+    a = []
+    b = []
+    for i in prof.todo_tasks.all():
+        a.append(i.num)
+    for i in prof.wa_tasks.all():
+        b.append(i.num)
+    return a, b
 
-
-    for name in nameList:
-        num = int(name.get_text()[:4])
-        t = Task.objects.get(num=num)
-        prof.wa_tasks.add(t)

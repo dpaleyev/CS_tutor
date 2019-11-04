@@ -23,7 +23,7 @@ struct HomeView: View {
                 Text("Статистика")
                     
             }.tag(2)
-            ChartView(res: [3, 4, 0, 0, 4, 5, 1])
+            NotesView()
                 .tabItem {
                 Image(systemName: "list.bullet").resizable()
                 Text("Идеи")

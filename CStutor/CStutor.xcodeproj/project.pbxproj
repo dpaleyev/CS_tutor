@@ -26,6 +26,11 @@
 		1E4BFF88236F004900293A2B /* StatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BFF87236F004900293A2B /* StatisticView.swift */; };
 		1E4BFF8A236F051F00293A2B /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BFF89236F051E00293A2B /* Statistics.swift */; };
 		1E4BFF8C236F2ED700293A2B /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BFF8B236F2ED600293A2B /* ChartView.swift */; };
+		1E6259CA237028770022845E /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6259C9237028770022845E /* NotesView.swift */; };
+		1E6259CC2370288D0022845E /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6259CB2370288D0022845E /* Idea.swift */; };
+		1E6259CE237038CC0022845E /* CreatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6259CD237038CC0022845E /* CreatingView.swift */; };
+		1E6259D0237055FE0022845E /* IdeaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6259CF237055FE0022845E /* IdeaView.swift */; };
+		1E6259D42370876D0022845E /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6259D32370876D0022845E /* Tasks.swift */; };
 		1E85E1EB236B44FD003504E1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E85E1EA236B44FD003504E1 /* LoginView.swift */; };
 		1E85E1ED236B4FE6003504E1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E85E1EC236B4FE6003504E1 /* HomeView.swift */; };
 		1EE35AE4236D9E5900BAA42E /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE35AE3236D9E5800BAA42E /* BookView.swift */; };
@@ -55,6 +60,11 @@
 		1E4BFF87236F004900293A2B /* StatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticView.swift; sourceTree = "<group>"; };
 		1E4BFF89236F051E00293A2B /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		1E4BFF8B236F2ED600293A2B /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		1E6259C9237028770022845E /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		1E6259CB2370288D0022845E /* Idea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
+		1E6259CD237038CC0022845E /* CreatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingView.swift; sourceTree = "<group>"; };
+		1E6259CF237055FE0022845E /* IdeaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaView.swift; sourceTree = "<group>"; };
+		1E6259D32370876D0022845E /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
 		1E85E1EA236B44FD003504E1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1E85E1EC236B4FE6003504E1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1EE35AE3236D9E5800BAA42E /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
@@ -92,9 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				1E07550B236E0A7C0057F001 /* CSTutor.entitlements */,
-				1EE35AE5236D9EC400BAA42E /* ThemeButtonView.swift */,
-				1EE35AE3236D9E5800BAA42E /* BookView.swift */,
 				1E11746E236A00DB00417417 /* Profile.swift */,
+				1E6259CB2370288D0022845E /* Idea.swift */,
+				1E6259D32370876D0022845E /* Tasks.swift */,
 				1E117470236A02AF00417417 /* Settings.swift */,
 				1E4BFF89236F051E00293A2B /* Statistics.swift */,
 				1E117472236A031900417417 /* UserManager.swift */,
@@ -107,13 +117,10 @@
 				1E1174652369FDCA00417417 /* Info.plist */,
 				1E11745F2369FDCA00417417 /* Preview Content */,
 				1E117474236A087D00417417 /* StarterView.swift */,
+				1E6259D1237086DA0022845E /* Book */,
 				1E85E1EC236B4FE6003504E1 /* HomeView.swift */,
-				1E075503236DDEA50057F001 /* ThemeView.swift */,
-				1E075505236DE0C00057F001 /* LessonsManager.swift */,
-				1E075507236DE0E30057F001 /* LessonModel.swift */,
-				1E075509236DE7810057F001 /* LessonDetails.swift */,
+				1E6259D22370871A0022845E /* Notes */,
 				1E4BFF87236F004900293A2B /* StatisticView.swift */,
-				1E4BFF8B236F2ED600293A2B /* ChartView.swift */,
 			);
 			path = CSTutor;
 			sourceTree = "<group>";
@@ -135,9 +142,33 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		1E6259D1237086DA0022845E /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				1EE35AE3236D9E5800BAA42E /* BookView.swift */,
+				1E075503236DDEA50057F001 /* ThemeView.swift */,
+				1E075509236DE7810057F001 /* LessonDetails.swift */,
+				1E075505236DE0C00057F001 /* LessonsManager.swift */,
+				1E075507236DE0E30057F001 /* LessonModel.swift */,
+			);
+			name = Book;
+			sourceTree = "<group>";
+		};
+		1E6259D22370871A0022845E /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				1E6259CF237055FE0022845E /* IdeaView.swift */,
+				1E6259CD237038CC0022845E /* CreatingView.swift */,
+				1E6259C9237028770022845E /* NotesView.swift */,
+			);
+			name = Notes;
+			sourceTree = "<group>";
+		};
 		1E85E1E9236B44AC003504E1 /* Utilitls */ = {
 			isa = PBXGroup;
 			children = (
+				1E4BFF8B236F2ED600293A2B /* ChartView.swift */,
+				1EE35AE5236D9EC400BAA42E /* ThemeButtonView.swift */,
 				1E117478236A09B300417417 /* KeyboardFollower.swift */,
 				1E11747D236A1FC000417417 /* BorderedViewModifier.swift */,
 			);
@@ -222,6 +253,7 @@
 				1E117475236A087D00417417 /* StarterView.swift in Sources */,
 				1E07550A236DE7810057F001 /* LessonDetails.swift in Sources */,
 				1EE35AE4236D9E5900BAA42E /* BookView.swift in Sources */,
+				1E6259D0237055FE0022845E /* IdeaView.swift in Sources */,
 				1E11746F236A00DB00417417 /* Profile.swift in Sources */,
 				1E4BFF8A236F051F00293A2B /* Statistics.swift in Sources */,
 				1E4BFF88236F004900293A2B /* StatisticView.swift in Sources */,
@@ -229,11 +261,15 @@
 				1EE35AE6236D9EC500BAA42E /* ThemeButtonView.swift in Sources */,
 				1E85E1ED236B4FE6003504E1 /* HomeView.swift in Sources */,
 				1E075504236DDEA50057F001 /* ThemeView.swift in Sources */,
+				1E6259CC2370288D0022845E /* Idea.swift in Sources */,
+				1E6259CA237028770022845E /* NotesView.swift in Sources */,
 				1E075506236DE0C00057F001 /* LessonsManager.swift in Sources */,
+				1E6259CE237038CC0022845E /* CreatingView.swift in Sources */,
 				1E11747E236A1FC000417417 /* BorderedViewModifier.swift in Sources */,
 				1E11747C236A09F400417417 /* RegisterView.swift in Sources */,
 				1E11745A2369FDC300417417 /* SceneDelegate.swift in Sources */,
 				1E85E1EB236B44FD003504E1 /* LoginView.swift in Sources */,
+				1E6259D42370876D0022845E /* Tasks.swift in Sources */,
 				1E117471236A02AF00417417 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

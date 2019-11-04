@@ -11,4 +11,5 @@ struct Settings : Codable {
     var regprobl = false
     var authprobl = false
     var token: String = ""
+    var addingIdeaProbl = false
 }
