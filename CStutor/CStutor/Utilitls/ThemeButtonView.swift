@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ThemeButtonView: View {
+struct ThemeButtonView: View { // кнопка темы
     @State var title: String
     @State var info: String
     @State var col: Color

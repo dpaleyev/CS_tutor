@@ -12,10 +12,10 @@ struct StarterView: View {
     @EnvironmentObject var userViewModel: UserManager
     var body: some View {
         Group {
-            if self.userViewModel.isRegistered {
-            HomeView()
+            if self.userViewModel.isRegistered { // проверка на авторизированность пользователя
+            HomeView() // Домашняя страница
           } else {
-            LoginView(keyboardHandler: KeyboardFollower())
+            LoginView(keyboardHandler: KeyboardFollower()) // Страница регистрации
           }
         }
     }

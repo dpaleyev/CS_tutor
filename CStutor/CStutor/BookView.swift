@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct BookView: View {
+struct BookView: View { // страница выбора тем
     var body: some View {
             NavigationView{
                 ScrollView{

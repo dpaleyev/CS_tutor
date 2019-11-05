@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct BorderedViewModifier: ViewModifier {
+struct BorderedViewModifier: ViewModifier { // модифаер для кнопок
   func body(content: Content) -> some View {
     content
       .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))

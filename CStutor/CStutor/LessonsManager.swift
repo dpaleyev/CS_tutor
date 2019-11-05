@@ -10,14 +10,16 @@ import Foundation
 import Combine
 import SwiftUI
 
-class LessonsManager: ObservableObject {
+class LessonsManager: ObservableObject { // менеджер уроков
     var didChange = PassthroughSubject<LessonsManager, Never>()
+    
     var lessons: [Lesson] = []{
       didSet {
         didChange.send(self)
       }
     }
-    init(num:Int) {
+    
+    init(num:Int) { //получение уроков при инициализации
         let url = URL(string: "http://localhost:8000/lesson/theme/\(num)/")!
         var request = URLRequest(url: url)
         request.setValue("Token 7304f93d968a0f76590c10c9f8d1190dba213684", forHTTPHeaderField: "Authorization")

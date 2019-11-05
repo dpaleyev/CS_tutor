@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Idea: Decodable, Hashable {
+struct Idea: Decodable, Hashable { // Идея
     var id: Int
     var idea: String
     var modified: String

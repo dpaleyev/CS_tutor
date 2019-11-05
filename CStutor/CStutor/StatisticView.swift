@@ -33,7 +33,7 @@ struct StatisticView: View {
                     }.padding()
                 }
                 
-                HStack(alignment: .center){
+                HStack(alignment: .center){ //График
                     ForEach(0...6, id: \.self) {col in
                         ZStack{
                             VStack{
@@ -46,7 +46,7 @@ struct StatisticView: View {
                     }
                 }
                 
-                if userManager.statistics.day_statistic[0] == 0 {
+                if userManager.statistics.day_statistic[0] == 0 { // Сообщение по дням
                     ZStack{
                         RoundedRectangle(cornerRadius: 25).fill(Color(hue: 55/360, saturation: 36/100, brightness: 98/100))
                         HStack{
@@ -57,7 +57,7 @@ struct StatisticView: View {
                         }.frame(height: 100).padding()
                 }
                 
-                if userManager.statistics.day_statistic.reduce(0, +) >= 7 {
+                if userManager.statistics.day_statistic.reduce(0, +) >= 7 { // сообщение по неделям
                     ZStack{
                         RoundedRectangle(cornerRadius: 25).fill(Color.green)
                         HStack{
@@ -77,7 +77,7 @@ struct StatisticView: View {
                     }.frame(height: 100).padding()
                 }
                 
-                ForEach(userManager.statistics.theme_statistic, id: \.self){ theme in
+                ForEach(userManager.statistics.theme_statistic, id: \.self){ theme in // статистика по темам
                     HStack{
                         ZStack {
                             Circle()
@@ -99,7 +99,7 @@ struct StatisticView: View {
                         }
                     }
                 }
-                
+                //задачи которые может решить пользователь
                 HStack{
                     Text("Ты можешь решить эти задачи:")
                         .font(.headline)
@@ -118,7 +118,7 @@ struct StatisticView: View {
                     }
                 }
 
-                
+                //нерешенные задачи
                 HStack{
                     Text("Попробуй решить ещё раз:")
                         .font(.headline)
@@ -140,7 +140,7 @@ struct StatisticView: View {
                 
             }
             .navigationBarTitle("Статистика")
-            .navigationBarItems(trailing: Button(action: {
+            .navigationBarItems(trailing: Button(action: { // обновление страницы
                 self.userManager.getResults()
                 self.userManager.getTasks()
             }) {
@@ -152,29 +152,29 @@ struct StatisticView: View {
         }
     }
     
-    func getProg(t: Theme) -> Double{
+    func getProg(t: Theme) -> Double{ // получение прогресса
         let a = Double(t.tasks)
         let b = Double(t.compl)
         return b/a
     }
     
-    func getPercentage(_ value:Double) -> String {
+    func getPercentage(_ value:Double) -> String { // получение в процентах прогресса
         let intValue = Int(ceil(value * 100))
         return "\(intValue) %"
     }
     
-    func getK(c: Int) -> Int{
+    func getK(c: Int) -> Int{ // получение высоты столбца
         return Int((Double(self.userManager.statistics.day_statistic[c])/Double(max(self.userManager.statistics.day_statistic.max()!, 1)) * 200))
     }
     
-    func getDay() -> Int{
+    func getDay() -> Int{ // получение номер дня недели
         let date = Date()
         let calendar = Calendar.current
         let weekday = calendar.component(.weekday, from: date)
         return weekday
     }
 
-    func getWeekDay(day: Int) -> String{
+    func getWeekDay(day: Int) -> String{ // получение названия дня недели
         let nday = (day + 6)%7 + 1
         switch nday {
         case 1:

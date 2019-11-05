@@ -6,7 +6,7 @@
 //  Copyright © 2019 Даниил Палеев. All rights reserved.
 //
 
-struct Settings : Codable {
+struct Settings : Codable { //Настройки пользвателя
     var rememberUser: Bool = false
     var regprobl = false
     var authprobl = false

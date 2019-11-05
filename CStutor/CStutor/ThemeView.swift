@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ThemeView: View {
+struct ThemeView: View { // страница выбора урока
     @State var title: String
     @State var lessonsManager: LessonsManager
     var body: some View {

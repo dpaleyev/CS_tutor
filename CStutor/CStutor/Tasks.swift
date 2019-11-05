@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Tasks: Decodable, Hashable {
+struct Tasks: Decodable, Hashable { // Задания пользователя
     var todo: [Int]
     var wa: [Int]
     init(){

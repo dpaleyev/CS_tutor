@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct LessonDetails: View {
+struct LessonDetails: View { //страница урока
     @State var lesson: Lesson
     var body: some View {
         ScrollView{

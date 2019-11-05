@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ChartView: View {
+struct ChartView: View { // Графики по дням
     @State var res: [Int]
     var body: some View {
         HStack(alignment: .center){
@@ -24,17 +24,17 @@ struct ChartView: View {
             }
         }
     }
-    func getK(c: Int) -> Int{
+    func getK(c: Int) -> Int{ // получение высоты
         return Int((Double(self.res[c])/Double(max(self.res.max()!, 1)) * 200))
     }
-    func getDay() -> Int{
+    func getDay() -> Int{ // получение номера дня недели
         let date = Date()
         let calendar = Calendar.current
         let weekday = calendar.component(.weekday, from: date)
         return weekday
     }
 
-    func getWeekDay(day: Int) -> String{
+    func getWeekDay(day: Int) -> String{ // получение дня недели
         let nday = (day + 6)%7 + 1
         switch nday {
         case 1:

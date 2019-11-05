@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Lesson: Decodable {
+struct Lesson: Decodable { // Урок
     var id: Int
     var title: String
     var theme: Int

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Даниил Палеев. All rights reserved.
 //
 
-struct Profile : Codable {
+struct Profile : Codable { //Профиль пользователя
     var username: String
     var email: String
     var password: String

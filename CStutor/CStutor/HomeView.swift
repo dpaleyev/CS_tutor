@@ -12,18 +12,18 @@ struct HomeView: View {
     @State var selectedView = 2
     var body: some View {
         TabView(selection: $selectedView) {
-            BookView()
+            BookView() // страница с выбором тем
                 .tabItem {
                 Image(systemName: "book").resizable()
                 Text("Учебник")
             }.tag(1)
-            StatisticView()
+            StatisticView() // страница со статистикой
                 .tabItem {
                 Image(systemName: "star").resizable()
                 Text("Статистика")
                     
             }.tag(2)
-            NotesView()
+            NotesView() // страница с идеями
                 .tabItem {
                 Image(systemName: "list.bullet").resizable()
                 Text("Идеи")

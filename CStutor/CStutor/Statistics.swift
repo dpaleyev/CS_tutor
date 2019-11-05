@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Statistics: Codable, Hashable{
+struct Statistics: Codable, Hashable{ // Статистика пользователся
     var completed: Int
     var tried: Int
     var day_statistic: [Int]
@@ -21,7 +21,7 @@ struct Statistics: Codable, Hashable{
     }
 }
 
-struct Theme: Codable, Hashable {
+struct Theme: Codable, Hashable { // Статистика по теме
     var name: String
     var url: String
     var compl: Int

@@ -9,8 +9,10 @@
 import Combine
 import Foundation
 
-final class UserManager: ObservableObject {
+final class UserManager: ObservableObject { // Менеджер пользователся
     var didChange = PassthroughSubject<UserManager, Never>()
+    
+    //Добавление составляющих пользователя
     
     @Published
     var profile: Profile = Profile()
@@ -43,10 +45,10 @@ final class UserManager: ObservableObject {
         }
     }
     
-    var isRegistered: Bool {
+    var isRegistered: Bool { // Проверка зарегистрирован ли
         return settings.token != ""
     }
-  
+    
     init() {
     }
     
@@ -54,25 +56,25 @@ final class UserManager: ObservableObject {
       self.profile.username = name
     }
   
-    func persistProfile() {
+    func persistProfile() { // Сохранение профиля в памяти
         if settings.rememberUser {
             UserDefaults.standard.set(try? PropertyListEncoder().encode(profile), forKey: "user-profile")
         }
     }
   
-    func persistSettings() {
+    func persistSettings() { // Сохранение настроек в памяти
         if settings.rememberUser {
             UserDefaults.standard.set(try? PropertyListEncoder().encode(settings), forKey: "user-settings")
         }
     }
     
-    func persistStatistics() {
+    func persistStatistics() { // Сохранение статистики в памяти
         if settings.rememberUser {
             UserDefaults.standard.set(try? PropertyListEncoder().encode(statistics), forKey: "user-statistics")
         }
     }
   
-    func load() {
+    func load() { // Загрузка из памяти
         if let data = UserDefaults.standard.value(forKey: "user-profile") as? Data {
             if let profile = try? PropertyListDecoder().decode(Profile.self, from: data) {
                 self.profile = profile
@@ -91,13 +93,13 @@ final class UserManager: ObservableObject {
         }
     }
   
-    func clear() {
+    func clear() { // Удаление из памяти
         UserDefaults.standard.removeObject(forKey: "user-profile")
         UserDefaults.standard.removeObject(forKey: "user-settings")
         UserDefaults.standard.removeObject(forKey: "user-statistics")
     }
     
-    func registrate() {
+    func registrate() { // Регистрация пользователя (взаимодействия с сервером)
         let jsonData = try! JSONEncoder().encode(profile)
 
         let url = URL(string: "http://localhost:8000/register/")!
@@ -118,7 +120,7 @@ final class UserManager: ObservableObject {
         task.resume()
     }
     
-    func login()
+    func login() // Авторизация пользователя (взаимодействия с сервером)
     {
         let json = [
             "username": profile.username,
@@ -160,7 +162,7 @@ final class UserManager: ObservableObject {
         task.resume()
     }
     
-    func getResults() {
+    func getResults() { // Получение результатов (взаимодействия с сервером)
         let url = URL(string: "http://localhost:8000/statistics/")!
         var request = URLRequest(url: url)
         request.setValue("Token \(self.settings.token)", forHTTPHeaderField: "Authorization")
@@ -174,7 +176,7 @@ final class UserManager: ObservableObject {
         }.resume()
     }
     
-    func getTasks() {
+    func getTasks() { // Получение заданий (взаимодействия с сервером)
         let url = URL(string: "http://localhost:8000/todo/")!
         var request = URLRequest(url: url)
         request.setValue("Token \(self.settings.token)", forHTTPHeaderField: "Authorization")
@@ -187,7 +189,7 @@ final class UserManager: ObservableObject {
         }.resume()
     }
     
-    func getIdeas(){
+    func getIdeas(){ // Получение идей (взаимодействия с сервером)
         let url = URL(string: "http://localhost:8000/notes/")!
         var request = URLRequest(url: url)
         request.setValue("Token \(self.settings.token)", forHTTPHeaderField: "Authorization")
@@ -200,7 +202,7 @@ final class UserManager: ObservableObject {
         }.resume()
     }
     
-    func addIdea(idea: Idea){
+    func addIdea(idea: Idea){ // Добавление идей (взаимодействия с сервером)
         
         let json : [String:Any] = [
             "idea": idea.idea,
@@ -227,7 +229,7 @@ final class UserManager: ObservableObject {
         task.resume()
     }
     
-    func deleteIdea(idea: Idea){
+    func deleteIdea(idea: Idea){ // удаление идеи (взаимодействия с сервером)
         
         let json : [String:Any] = [
             "id": idea.id
@@ -253,7 +255,7 @@ final class UserManager: ObservableObject {
         task.resume()
     }
     
-    func editIdea(idea: Idea){
+    func editIdea(idea: Idea){ // изменение идеи (взаимодействия с сервером)
         
         let json : [String:Any] = [
             "id": idea.id,
