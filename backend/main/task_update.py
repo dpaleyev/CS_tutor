@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from .models import Profile, Task
 
 
-def update(prof):
+def update(prof):#обновление выполненных и невыполненных задач
     judge_id = int(prof.judge_id)
     url = 'https://timus.online/author.aspx?id=%d&sort=difficulty' % judge_id
     req = requests.get(url)

@@ -4,7 +4,7 @@ from .models import Task
 from .serializers import ThemeSerializer, TaskSerializer
 
 
-def add(url, name):
+def add(url, name): #добавление темы
     req = requests.get(url)
     theme_serializer = ThemeSerializer(data={"name": name, "url": url})
     theme_serializer.is_valid()

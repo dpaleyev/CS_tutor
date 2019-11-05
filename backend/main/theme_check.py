@@ -1,6 +1,6 @@
 from .models import Profile, Theme, Task
 
-def theme_res(profile):
+def theme_res(profile):#получение выполненных задач по теме, формирование словаря
     a = []
     for i in Theme.objects.all():
         d = {}

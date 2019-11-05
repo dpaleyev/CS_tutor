@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from .models import Profile, Task
 
-def get_to_do(prof):
+def get_to_do(prof): #обновление задач чтоб сделать
     judge_id = int(prof.judge_id)
     url = 'https://timus.online/author.aspx?id=%d&sort=difficulty' % judge_id
     req = requests.get(url)
@@ -18,7 +18,7 @@ def get_to_do(prof):
         prof.todo_tasks.add(t)
         i += 1
 
-def get_tasks(prof):
+def get_tasks(prof):#получение задач чтоб сделать и ВА
     a = []
     b = []
     for i in prof.todo_tasks.all():

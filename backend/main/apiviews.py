@@ -15,13 +15,14 @@ from .task_update import update
 from .gtodo import get_to_do, get_tasks
 
 
-class NoteList(APIView):
+class NoteList(APIView): #АПИ для идей
     def get(self, request):
         user = request.user
         p = Profile.objects.get(user=user)
         notes = p.notes
         data = NoteSerializer(notes, many=True).data
         return Response(data)
+
     def post(self, request):
         user = request.user
         p = Profile.objects.get(user=user)
@@ -32,6 +33,7 @@ class NoteList(APIView):
         note.save()
         p.notes.add(note)
         return Response(status=status.HTTP_201_CREATED)
+
     def put(self, request):
         data = json.loads(request.body)
         id = data["id"]
@@ -42,6 +44,7 @@ class NoteList(APIView):
         n.task = task
         n.save()
         return Response(status=status.HTTP_201_CREATED)
+
     def delete(self, request):
         data = json.loads(request.body)
         id = data["id"]
@@ -49,7 +52,7 @@ class NoteList(APIView):
         return Response(status=status.HTTP_200_OK)
 
 
-class Statistic(APIView):
+class Statistic(APIView):#АПИ для статистики
     def get(self, request):
         user = request.user
         p = Profile.objects.get(user=user)
@@ -66,7 +69,7 @@ class Statistic(APIView):
         }
         return JsonResponse(data)
 
-class ToDo(APIView):
+class ToDo(APIView):#АПИ для задач
     def get(self, request):
         user = request.user
         p = Profile.objects.get(user=user)
@@ -80,21 +83,21 @@ class ToDo(APIView):
         return JsonResponse(data)
 
 
-class LessonList(APIView):
+class LessonList(APIView):#АПИ для тем и уроков
     def get(self, request, theme):
         lessons = Lesson.objects.filter(theme=theme)
         data = LessonSerializer(lessons, many=True).data
         return Response(data)
 
 
-class LessonDetail(APIView):
+class LessonDetail(APIView):#АПИ для уроков
     def get(self, request, pk):
         lesson = get_object_or_404(Lesson, pk=pk)
         data = LessonSerializer(lesson).data
         return Response(data)
 
 
-class UserCreate(APIView):
+class UserCreate(APIView): #АПИ для создания пользователя
     authentication_classes = ()
     permission_classes = ()
 

@@ -5,7 +5,7 @@ import pytz
 
 m = {'Jan': 1, "Feb": 2, "Mar": 3, "Apr": 4, "May": 5, "Jun": 6, "Jul": 7, "Aug": 8, "Sep": 9, "Oct": 10, "Nov": 11, "Dec": 12}
 
-def date_res(profile):
+def date_res(profile): #получение результата по дням
     judge_id = int(profile.judge_id)
     daten = datetime.now(pytz.timezone('Asia/Yekaterinburg')).date()
     a = [0]*7
