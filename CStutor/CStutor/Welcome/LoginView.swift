@@ -25,7 +25,7 @@ struct LoginView: View {
                   Spacer()
                 
                   Toggle(isOn: $userManager.settings.rememberUser) {
-                    Text("Remember me")
+                    Text("Запомнить меня")
                       .font(.subheadline)
                       .multilineTextAlignment(.trailing)
                       .foregroundColor(.gray)
@@ -34,7 +34,7 @@ struct LoginView: View {
                     .padding(.bottom, 5)
                 Button(action: self.loginUser) {
                   HStack {
-                    Text("Sign in")
+                    Text("Войти")
                       .font(Font.system(size: 22, design: .default))
                       .bold()
                   }
@@ -42,7 +42,7 @@ struct LoginView: View {
                     .padding(.bottom, 5)
                 
                 NavigationLink(destination: RegisterView(keyboardHandler: KeyboardFollower())) {
-                        Text("Sign up")
+                        Text("Зарегистрироваться")
                       }.font(Font.system(size: 22, design: .default))
                 
                 Text("\(userManager.settings.token)")

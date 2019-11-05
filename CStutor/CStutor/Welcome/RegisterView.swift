@@ -32,7 +32,7 @@ struct RegisterView: View {
               Spacer()
             
               Toggle(isOn: $userManager.settings.rememberUser) {
-                Text("Remember me")
+                Text("Запомнить меня")
                   .font(.subheadline)
                   .multilineTextAlignment(.trailing)
                   .foregroundColor(.gray)
@@ -41,7 +41,7 @@ struct RegisterView: View {
             
             Button(action: self.registerUser) {
               HStack {
-                Text("Sign up")
+                Text("Зарегистрироваться")
                   .font(Font.system(size: 22, design: .default))
                   .bold()
               }
