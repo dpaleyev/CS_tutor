@@ -148,6 +148,7 @@ struct StatisticView: View {
             })
         }
         .onAppear { self.userManager.getResults()
+                    sleep(2)
                     self.userManager.getTasks()
         }
     }
